@@ -9,6 +9,9 @@ $ git clone https://github.com/Manan17/prisha-policy.git
 $ cd prisha-policy
 $ npm i --workspaces
 # Only if using the prisma ORM
+Create a database in Postgres and add this env:
+PORT=3000
+DATABASE_URL="postgresql://<username>:<password>@localhost:5432/<database>?schema=public"
 $ npx prisma db push
 ```
 
