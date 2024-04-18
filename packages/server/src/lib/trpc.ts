@@ -1,29 +1,22 @@
-import { inferAsyncReturnType, initTRPC, TRPCError } from '@trpc/server'
-import * as trpcExpress from '@trpc/server/adapters/express'
-
+import { inferAsyncReturnType, initTRPC, TRPCError } from "@trpc/server";
+import * as trpcExpress from "@trpc/server/adapters/express";
+import jwt from "jsonwebtoken";
 export const createContext = ({
   req,
   res,
 }: trpcExpress.CreateExpressContextOptions) => {
-  // req.
-  const token = req.headers.authorization
-  // Validate token
-  // Get the user
-  const user = 'Truly'
+  const token = req.headers.authorization;
 
-  const noUser = undefined
-
-  if (user) {
-    throw new TRPCError({
-      code: 'UNAUTHORIZED',
-      message: 'You are not authorized',
-    })
+  let user: any;
+  if (token) {
+    user = jwt.decode(token.split(" ")[1]);
+  } else {
+    user = undefined;
   }
-
   return {
     user: user,
-  }
-}
+  };
+};
 
-type Context = inferAsyncReturnType<typeof createContext>
-export const trpc = initTRPC.context<Context>().create()
+type Context = inferAsyncReturnType<typeof createContext>;
+export const trpc = initTRPC.context<Context>().create();

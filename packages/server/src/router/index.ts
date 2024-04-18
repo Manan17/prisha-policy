@@ -1,8 +1,14 @@
-import { trpc } from '../lib/trpc'
-import { todoRouter } from './todoRouter'
+import { trpc } from "../lib/trpc";
+import { employeeRouter } from "./employee";
+import { hrRouter } from "./hr";
+import { insuranceRouter } from "./insurance";
+import { userRouter } from "./user";
 
 export const appRouter = trpc.router({
-  todo: todoRouter,
-})
+  insurance: insuranceRouter,
+  user: userRouter,
+  employee: employeeRouter,
+  hr: hrRouter,
+});
 
-export type AppRouter = typeof appRouter
+export type AppRouter = typeof appRouter;
