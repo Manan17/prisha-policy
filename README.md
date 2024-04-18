@@ -5,8 +5,8 @@ This is a minimal monorepo for Express.js as backend and React frontend with tRP
 ## Clone and install dependencies 🏭
 
 ```bash
-$ git clone https://github.com/trulymittal/t3-app-with-express-react-vite-trpc-prisma.git
-$ cd t3-app-with-express-react-vite-trpc-prisma
+$ git clone https://github.com/Manan17/prisha-policy.git
+$ cd prisha-policy
 $ npm i --workspaces
 # Only if using the prisma ORM
 $ npx prisma db push
@@ -25,18 +25,6 @@ The quickest way to get started is to clone the project and install the dependen
 $ npm i --workspaces
 $ npm run dev
 ```
-
-## Author ✍️
-
-[**Truly Mittal 🇮🇳**](https://trulymittal.com)
-
-## YouTube 📺
-
-https://youtube.com/@mafiacodes
-
-## Donations 💰
-
-https://paypal.me/trulymittal
 
 ## License 🎫
 
